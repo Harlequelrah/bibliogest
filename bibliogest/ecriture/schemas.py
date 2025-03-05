@@ -2,7 +2,8 @@ from pydantic import BaseModel, Field
 from typing import List, Optional
 from datetime import datetime
 from decimal import Decimal
-
+from bibliogest.auteur.meta_models import MetaAuteurModel
+from bibliogest.livre.meta_models import MetalivreModel
 
 class EcritureBaseModel(BaseModel):
     auteur_id: int = Field(example=1)
@@ -26,8 +27,6 @@ class EcriturePydanticModel(BaseModel):
         from_attributes=True
 
 
-class MetaEcritureModel(BaseModel):
-    auteur : "MetaAuteurModel"
-    livre : "MetalivreModel"
+
 
 

@@ -1,6 +1,6 @@
 from pydantic import BaseModel, Field
 from typing import List, Optional
-
+from bibliogest.ecriture.meta_models import MetaEcritureModel
 
 class AuteurBaseModel(BaseModel):
     nom :str = Field(example="Harlequelrah")
@@ -18,9 +18,7 @@ class AuteurPatchModel(BaseModel):
 
 class AuteurPydanticModel(AuteurBaseModel):
     id : int
-    auteur_ecritures : List[Optional["EcriturePydanticModel"]] = []
+    auteur_ecritures : List[Optional["MetaEcritureModel"]] = []
     class Config:
         from_attributes=True
 
-class MetaAuteurModel(AuteurBaseModel):
-    id :int

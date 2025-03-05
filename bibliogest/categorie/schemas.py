@@ -4,6 +4,8 @@ from datetime import datetime
 from decimal import Decimal
 from fastapi import Form
 
+from bibliogest.livre.meta_models import MetaLivreModel
+
 class CategorieBaseModel(BaseModel):
     nom : str = Field(example="Science-fiction")
 
@@ -22,6 +24,4 @@ class CategoriePydanticModel(BaseModel):
     class Config:
         from_attributes=True
 
-class MetaCategorieModel(BaseModel):
-    code : str
-    nom : str
+

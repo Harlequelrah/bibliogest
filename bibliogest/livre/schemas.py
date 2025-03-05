@@ -1,6 +1,8 @@
 from typing import List, Optional
 from pydantic import BaseModel, Field
 
+from bibliogest.ecriture.meta_models import MetaEcritureModel
+
 
 
 
@@ -31,5 +33,3 @@ class LivrePydanticModel(LivreBaseModel):
         from_attributes=True
 
 
-class MetaLivreModel(LivreBaseModel):
-    id:int
