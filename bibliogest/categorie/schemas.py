@@ -18,7 +18,9 @@ class CategoriePatchModel(BaseModel):
 
 class CategoriePydanticModel(BaseModel):
     code : str
-    livres: List["MetaLivre"] = []
+    livres: List["MetaLivreModel"] = []
+    class Config:
+        from_attributes=True
 
 class MetaCategorieModel(BaseModel):
     code : str

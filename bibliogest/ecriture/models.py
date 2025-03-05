@@ -9,7 +9,6 @@ from sqlalchemy.orm import relationship
 
 
 
-
 class ECRITURE(Base):
     __tablename__ = 'ecritures'
     id = Column(Integer, primary_key=True, index=True)

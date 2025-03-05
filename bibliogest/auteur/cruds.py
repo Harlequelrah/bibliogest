@@ -1,14 +1,16 @@
-from myproject.myapp.models import SQLAlchemyModel
-from myproject.myapp.schemas import CreatePydanticModel, UpdatePydanticModel
+from bibliogest.auteur.models import SQLAlchemyModel
+from bibliogest.auteur.schemas import AuteurCreateModel, AuteurUpdateModel,AuteurPatchModel
 from elrahapi.crud.crud_forgery import CrudForgery
-from myproject.settings.database import authentication
+from bibliogest.settings.database import authentication
 
-myapp_crud = CrudForgery(
-    entity_name="myapp",
+auteur_crud = CrudForgery(
+    entity_name="auteur",
     primary_key_name="id",
     authentication=authentication,
     SQLAlchemyModel=SQLAlchemyModel,
-    CreatePydanticModel=EntityCreatePydanticModel,
-    UpdatePydanticModel=EntityUpdatePydanticModel,
-    PatchPydanticModel=EntityPatchPydanticModel
+    CreatePydanticModel=AuteurCreateModel,
+    UpdatePydanticModel=AuteurUpdateModel,
+    PatchPydanticModel=AuteurPatchModel,
+
+
 )

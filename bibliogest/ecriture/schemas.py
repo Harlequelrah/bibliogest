@@ -1,21 +1,33 @@
-# from pydantic import BaseModel, Field
-# from typing import List, Optional
-# from datetime import datetime
-# from decimal import Decimal
-# from fastapi import Form
+from pydantic import BaseModel, Field
+from typing import List, Optional
+from datetime import datetime
+from decimal import Decimal
 
 
-# class EntityPydanticBaseModel(BaseModel):
-#     pass
+class EcritureBaseModel(BaseModel):
+    auteur_id: int = Field(example=1)
+    livre_id:int = Field(example=2)
 
-# class EntityCreateModel(BaseModel):
-#     pass
+class EcritureCreateModel(EcritureBaseModel):
+    pass
 
-# class EntityUpdateModel(BaseModel):
-#     pass
+class EcritureUpdateModel(EcritureBaseModel):
+    pass
 
-# class EntityPatchModel(BaseModel):
-#     pass
+class EcriturePatchModel(BaseModel):
+    auteur_id: Optional[int] =Field(example=6,default= None)
+    livre_id: Optional[int] = Field(example=6,default=None)
 
-# class EntityPydanticModel(BaseModel):
-#     pass
+class EcriturePydanticModel(BaseModel):
+    id : int
+    auteur : "MetaAuteurModel"
+    livre : "MetalivreModel"
+    class Config:
+        from_attributes=True
+
+
+class MetaEcritureModel(BaseModel):
+    auteur : "MetaAuteurModel"
+    livre : "MetalivreModel"
+
+

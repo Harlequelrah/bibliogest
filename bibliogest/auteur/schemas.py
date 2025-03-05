@@ -19,6 +19,8 @@ class AuteurPatchModel(BaseModel):
 class AuteurPydanticModel(AuteurBaseModel):
     id : int
     auteur_ecritures : List[Optional["EcriturePydanticModel"]] = []
+    class Config:
+        from_attributes=True
 
 class MetaAuteurModel(AuteurBaseModel):
     id :int
