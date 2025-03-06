@@ -15,8 +15,8 @@ class Livre(Base):
     contenue = Column(Text)
     nbr_pages = Column(Integer)
     code_cat = Column(String(5), ForeignKey('categories.code'))
-    categorie = relationship("Categoriz", back_populates="livres")
-    livres_ecritures = relationship("Ecriture", back_populates="livre")
+    categorie = relationship("Categorie", back_populates="livres")
+    livre_ecritures = relationship("Ecriture", back_populates="livre")
 
 
 

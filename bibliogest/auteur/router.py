@@ -19,8 +19,8 @@ router_provider = CustomRouterProvider(
 init_data: List[RouteConfig] = [
     RouteConfig(route_name=DefaultRoutesName.CREATE, is_activated=True),
     RouteConfig(route_name=DefaultRoutesName.READ_ONE, is_activated=True),
-    RouteConfig(route_name=DefaultRoutesName.READ_ALL, is_activated=True),
-    RouteConfig(route_name=DefaultRoutesName.UPDATE, is_activated=True, is_protected=True),
-    RouteConfig(route_name=DefaultRoutesName.DELETE, is_activated=True, is_protected=True),
+    RouteConfig(route_name=DefaultRoutesName.READ_ALL,is_activated=True),
+    RouteConfig(route_name=DefaultRoutesName.UPDATE, is_activated=True),
+    RouteConfig(route_name=DefaultRoutesName.DELETE, is_activated=True),
 ]
 app_auteur = router_provider.initialize_router(init_data=init_data)

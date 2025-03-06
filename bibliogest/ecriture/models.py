@@ -9,7 +9,7 @@ from sqlalchemy.orm import relationship
 
 
 
-class ECRITURE(Base):
+class Ecriture(Base):
     __tablename__ = 'ecritures'
     id = Column(Integer, primary_key=True, index=True)
     auteur_id = Column(Integer , ForeignKey('auteurs.id'))

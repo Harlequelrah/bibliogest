@@ -12,7 +12,7 @@ target_metadata.create_all(bind=engine)
 async def hello():
     return {"message":"hello"}
 app.include_router(app_auteur)
-# app.add_middleware(
-#     ErrorHandlingMiddleware,
-# )
+app.add_middleware(
+    ErrorHandlingMiddleware,
+)
 
