@@ -3,14 +3,14 @@ from elrahapi.router.router_default_routes_name import DefaultRoutesName
 from bibliogest.settings.database import authentication
 from bibliogest.auteur.cruds import auteur_crud
 from bibliogest.auteur.schemas import AuteurPydanticModel
-from typing import List
 from elrahapi.router.router_provider import CustomRouterProvider
 
 router_provider = CustomRouterProvider(
     prefix="/auteurs",
     tags=["auteur"],
     PydanticModel=AuteurPydanticModel,
-    crud=auteur_crud
+    crud=auteur_crud,
+    roles=["Manager"]
 )
 app_auteur = router_provider.get_mixed_router(
     protected_routes_name=[DefaultRoutesName.READ_ONE, DefaultRoutesName.READ_ALL],

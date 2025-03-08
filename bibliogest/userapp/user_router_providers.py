@@ -11,7 +11,7 @@ from elrahapi.authorization.role_privilege_model import RolePrivilegePydanticMod
 from elrahapi.router.router_provider import CustomRouterProvider
 from elrahapi.authorization.user_privilege_model import UserPrivilegePydanticModel
 
-from .user_cruds import privilegeCrud, roleCrud , userPrivilegeCrud , userCrud
+from .user_cruds import privilegeCrud, roleCrud , userPrivilegeCrud , userCrud,rolePrivilegeCrud
 
 
 
@@ -47,5 +47,5 @@ role_privilege_router_provider=CustomRouterProvider(
     prefix='/roles/privileges',
     tags=["roles_privileges"],
     PydanticModel=RolePrivilegePydanticModel,
-    crud=userPrivilegeCrud
+    crud=rolePrivilegeCrud
 )

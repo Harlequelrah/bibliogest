@@ -17,7 +17,7 @@ router_provider = CustomRouterProvider(
 # app_categorie = router_provider.get_protected_router()
 
 init_data: List[RouteConfig] = [
-    RouteConfig(route_name=DefaultRoutesName.CREATE, is_activated=True),
+    RouteConfig(route_name=DefaultRoutesName.CREATE, is_activated=True,privileges=["CAN_ADD_CATEGORIE"],is_protected=True),
     RouteConfig(route_name=DefaultRoutesName.READ_ONE, is_activated=True),
     RouteConfig(route_name=DefaultRoutesName.READ_ALL, is_activated=True),
     RouteConfig(route_name=DefaultRoutesName.UPDATE, is_activated=True, is_protected=True),
