@@ -1,14 +1,14 @@
-# from bibliogest.myapp.models import SQLAlchemyModel
-# from bibliogest.myapp.schemas import CreatePydanticModel, UpdatePydanticModel
-# from elrahapi.crud.crud_forgery import CrudForgery
-# from bibliogest.settings.database import authentication
+from bibliogest.livre.models import Livre
+from bibliogest.livre.schemas import LivreCreateModel, LivreUpdateModel,LivrePatchModel
+from elrahapi.crud.crud_forgery import CrudForgery
+from bibliogest.settings.database import authentication
 
-# myapp_crud = CrudForgery(
-#     entity_name="myapp",
-#     primary_key_name="id",
-#     authentication=authentication,
-#     SQLAlchemyModel=SQLAlchemyModel,
-#     CreatePydanticModel=EntityCreatePydanticModel,
-#     UpdatePydanticModel=EntityUpdatePydanticModel,
-#     PatchPydanticModel=EntityPatchPydanticModel
-# )
+livre_crud = CrudForgery(
+    entity_name="livre",
+    primary_key_name="id",
+    authentication=authentication,
+    SQLAlchemyModel=Livre,
+    CreatePydanticModel=LivreCreateModel,
+    UpdatePydanticModel=LivreUpdateModel,
+    PatchPydanticModel=LivrePatchModel
+)
