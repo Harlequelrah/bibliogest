@@ -2,7 +2,7 @@ from typing import List, Optional
 from pydantic import BaseModel, Field
 
 from bibliogest.categorie.meta_models import MetaCategorieModel
-from bibliogest.ecriture.meta_models import MetaEcritureModel
+from bibliogest.ecriture.meta_models import MetaAuteurEcritureModel
 
 
 
@@ -29,7 +29,7 @@ class LivrePatchModel(BaseModel):
 class LivrePydanticModel(LivreBaseModel):
     id:int
     categorie:"MetaCategorieModel"
-    livres_ecritures : List["MetaEcritureModel"]=[]
+    livres_ecritures : List["MetaAuteurEcritureModel"]=[]
     class Config:
         from_attributes=True
 
