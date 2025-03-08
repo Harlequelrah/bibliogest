@@ -14,9 +14,9 @@ target_metadata.create_all(bind=engine)
 @app.get("/")
 async def hello():
     return {"message":"hello"}
-# app.include_router(app_auteur)
-# app.include_router(app_categorie)
-# app.include_router(app_livre)
+app.include_router(app_auteur)
+app.include_router(app_categorie)
+app.include_router(app_livre)
 app.include_router(app_ecriture)
 app.add_middleware(
     ErrorHandlingMiddleware,
