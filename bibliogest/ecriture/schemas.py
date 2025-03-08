@@ -3,7 +3,7 @@ from typing import List, Optional
 from datetime import datetime
 from decimal import Decimal
 from bibliogest.auteur.meta_models import MetaAuteurModel
-from bibliogest.livre.meta_models import MetalivreModel
+from bibliogest.livre.meta_models import MetaLivreModel
 
 class EcritureBaseModel(BaseModel):
     auteur_id: int = Field(example=1)
@@ -22,7 +22,7 @@ class EcriturePatchModel(BaseModel):
 class EcriturePydanticModel(BaseModel):
     id : int
     auteur : "MetaAuteurModel"
-    livre : "MetalivreModel"
+    livre : "MetaLivreModel"
     class Config:
         from_attributes=True
 
