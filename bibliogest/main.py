@@ -8,7 +8,7 @@ from bibliogest.livre.router import app_livre
 from bibliogest.ecriture.router import app_ecriture
 from bibliogest.loggerapp.log_router import app_logger
 from bibliogest.loggerapp.log_model import Logger
-
+from bibliogest.userapp.user_routers import *
 from elrahapi.middleware.log_middleware import LoggerMiddleware
 app = FastAPI()
 
@@ -17,11 +17,16 @@ target_metadata.create_all(bind=engine)
 @app.get("/")
 async def hello():
     return {"message":"hello"}
-app.include_router(app_auteur)
+# app.include_router(app_auteur)
 app.include_router(app_categorie)
-app.include_router(app_livre)
-app.include_router(app_ecriture)
-app.include_router(app_logger)
+app.include_router(app_role)
+app.include_router(app_user)
+app.include_router(app_user_privilege)
+app.include_router(app_role_privilege)
+app.include_router(app_privilege)
+# app.include_router(app_livre)
+# app.include_router(app_ecriture)
+# app.include_router(app_logger)
 app.add_middleware(
     ErrorHandlingMiddleware,
     LoggerMiddlewareModel=Logger,
