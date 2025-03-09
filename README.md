@@ -11,8 +11,9 @@ Bibliogest est un projet simple de gestion de bibliothèque .
 
 ## Utilisation
 
-```python
-  python __main__.py
+```bash
+   cd bibliogest
+  elrahapi run
 ```
 
 ## `Technologies et bibliothèques`
