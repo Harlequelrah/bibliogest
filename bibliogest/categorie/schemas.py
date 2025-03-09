@@ -18,7 +18,7 @@ class CategorieUpdateModel(CategorieBaseModel):
 class CategoriePatchModel(BaseModel):
     nom : Optional[str] = Field(None, example="Science-fiction")
 
-class CategoriePydanticModel(BaseModel):
+class CategoriePydanticModel(CategorieBaseModel):
     code : str
     livres: List["MetaLivreModel"] = []
     class Config:
