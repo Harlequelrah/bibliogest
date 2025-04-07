@@ -1,15 +1,15 @@
-from elrahapi.user import  models
+from elrahapi.user import  model
 from bibliogest.settings import authentication
-class UserBaseModel(models.UserBaseModel):
+class UserBaseModel(model.UserBaseModel):
     pass
 
-class UserCreateModel(models.UserCreateModel):
+class UserCreateModel(model.UserCreateModel):
     pass
 
-class UserUpdateModel(models.UserUpdateModel):
+class UserUpdateModel(model.UserUpdateModel):
     pass
 
-class UserPatchModel(models.UserPatchModel):
+class UserPatchModel(model.UserPatchModel):
     pass
 
 class UserPydanticModel(UserBaseModel):
