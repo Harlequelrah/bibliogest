@@ -1,7 +1,7 @@
 from elrahapi.router.router_namespace import DefaultRoutesName
 from elrahapi.router.router_provider import CustomRouterProvider
 from .log_crud import logCrud
-from .log_schema import LoggerMiddlewarePydanticModel as LMPD
+from .log_schema import LoggerMiddlewareReadModel as LMPD
 
 router_provider = CustomRouterProvider(
     prefix="/logs",

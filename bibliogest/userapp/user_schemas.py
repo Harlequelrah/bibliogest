@@ -12,11 +12,11 @@ class UserUpdateModel(model.UserUpdateModel):
 class UserPatchModel(model.UserPatchModel):
     pass
 
-class UserPydanticModel(UserBaseModel):
+class UserReadModel(UserBaseModel):
     class Config :
         from_attributes=True
 
-authentication.UserPydanticModel = UserPydanticModel
+authentication.UserReadModel = UserReadModel
 authentication.UserCreateModel = UserCreateModel
 authentication.UserUpdateModel = UserUpdateModel
 authentication.UserPatchModel = UserPatchModel
